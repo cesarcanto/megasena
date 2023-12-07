@@ -19,8 +19,15 @@ for numeros in jogos_da_mega_sena:
     
     # Destacar se houver mais de 4 acertos no mesmo jogo
     if acertos >= 4:
+        print("-----------------------------------------------------")
         print(f"A data do jogo Mega Sena é: {data_sorteio_mega_sena}")
+        print("-----------------------------------------------------")
         print(f"No jogo {numeros}, você acertou {acertos} números. (Mais de 4 acertos!)")
+        print("-----------------------------------------------------")
     else:
+        print("-----------------------------------------------------")
+        print(f"A data do jogo Mega Sena é: {data_sorteio_mega_sena}")
+        print("-----------------------------------------------------")
         print(f"Não houve nenhum jogo com mais de 4 acertos!")
+        print("-----------------------------------------------------")
         break

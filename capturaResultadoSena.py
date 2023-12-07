@@ -1,9 +1,9 @@
 import requests
 
-def obter_resultado_mega_sena():
-    # Faz a requisição à API da Caixa para obter o resultado mais recente da Mega Sena
-    url = 'https://apiloterias.com.br/app/v2/resultado?loteria=megasena'
+# API da Caixa para obter o resultado mais recente da Mega Sena
+url = 'https://apiloterias.com.br/app/v2/resultado?loteria=megasena'
 
+def obter_resultado_mega_sena():
     response = requests.get(url)
     if response.status_code == 200:
         resultado = response.json()
@@ -16,9 +16,6 @@ def obter_resultado_mega_sena():
         return None
 
 def obter_data_mewga_sena():
-        # Faz a requisição à API da Caixa para obter o resultado mais recente da Mega Sena
-    url = 'https://apiloterias.com.br/app/v2/resultado?loteria=megasena'
-
     response = requests.get(url)
     if response.status_code == 200:
         resultado = response.json()
@@ -36,7 +33,10 @@ resultado_mega_sena = obter_resultado_mega_sena()
 data_sorteio_mega_sena = obter_data_mewga_sena()
 
 # Imprimir a data do jogo e os números sorteados
-if resultado_mega_sena:
-    print(f"A data do jogo Mega Sena é: {data_sorteio_mega_sena}")
-    print(f"Os números sorteados da Mega Sena foram: {', '.join(map(str, resultado_mega_sena))}")
+# if resultado_mega_sena:
+#     print("-----------------------------------------------------")
+#     print(f"A data do jogo Mega Sena é: {data_sorteio_mega_sena}")
+#     print("-----------------------------------------------------")
+#     print(f"Os números sorteados da Mega Sena foram: {', '.join(map(str, resultado_mega_sena))}")
+#     print("-----------------------------------------------------")
 
