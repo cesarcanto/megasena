@@ -28,6 +28,6 @@ for numeros in jogos_da_mega_sena:
         print("-----------------------------------------------------")
         print(f"A data do jogo Mega Sena é: {data_sorteio_mega_sena}")
         print("-----------------------------------------------------")
-        print(f"Não houve nenhum jogo com mais de 4 acertos!")
+        print(f"Não houve nenhum jogo com 4 ou mais acertos!")
         print("-----------------------------------------------------")
         break
