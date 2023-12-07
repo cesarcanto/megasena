@@ -9,4 +9,4 @@ Ao executar o jogoSena.py, ele confere a lista de jogos com o ultimo resultado.
 
 Printando na tela apenas os jogos que houver 4 ou mais acertos.
 
-[Money](images/dindin02.png)
+![Money](images/dindin02.png)
