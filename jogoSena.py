@@ -1,4 +1,4 @@
-from capturaResultadoSena import resultado_mega_sena
+from capturaResultadoSena import resultado_mega_sena, data_sorteio_mega_sena
     
 
 def comparar_numeros(jogo_atual, numeros_jogo):
@@ -19,6 +19,7 @@ for numeros in jogos_da_mega_sena:
     
     # Destacar se houver mais de 4 acertos no mesmo jogo
     if acertos >= 4:
+        print(f"A data do jogo Mega Sena é: {data_sorteio_mega_sena}")
         print(f"No jogo {numeros}, você acertou {acertos} números. (Mais de 4 acertos!)")
     else:
         print(f"Não houve nenhum jogo com mais de 4 acertos!")
