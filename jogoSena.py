@@ -1,10 +1,6 @@
 from capturaResultadoSena import resultado_mega_sena
-
-# # Usando o resultado capturado no outro arquivo
-# if resultado_mega_sena:
-#     print(f"Números sorteados da Mega Sena no outro arquivo foram: {', '.join(map(str, resultado_mega_sena))}")
-#     # Faça o que quiser com os números sorteados aqui
     
+
 def comparar_numeros(jogo_atual, numeros_jogo):
     numeros_acertados = len(jogo_atual.intersection(numeros_jogo))
     return numeros_acertados

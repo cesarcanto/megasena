@@ -3,7 +3,6 @@ import requests
 def obter_resultado_mega_sena():
     # Faz a requisição à API da Caixa para obter o resultado mais recente da Mega Sena
     url = 'https://apiloterias.com.br/app/v2/resultado?loteria=megasena'
-    # Substitua 'SEU_TOKEN_AQUI' pelo seu token de acesso à API, caso seja necessário
 
     response = requests.get(url)
     if response.status_code == 200:
