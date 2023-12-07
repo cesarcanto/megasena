@@ -35,7 +35,7 @@ resultado_mega_sena = obter_resultado_mega_sena()
 
 data_sorteio_mega_sena = obter_data_mewga_sena()
 
-# Se for rodar este script sozinho, pode imprimir os números sorteados
+# Imprimir a data do jogo e os números sorteados
 if resultado_mega_sena:
     print(f"A data do jogo Mega Sena é: {data_sorteio_mega_sena}")
     print(f"Os números sorteados da Mega Sena foram: {', '.join(map(str, resultado_mega_sena))}")
