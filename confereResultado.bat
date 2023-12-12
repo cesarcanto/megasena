@@ -1,3 +1,3 @@
-python jogoSena.py [Carregando Aguarde!!!]
+python jogoSena.py []
 
 pause

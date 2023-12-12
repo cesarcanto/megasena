@@ -21,51 +21,50 @@ if dados_mega_sena:
     with open(nome_arquivo, 'r') as file:
         linhas_arquivo = file.readlines()
 
-    # Listas para armazenar informações sobre os acertos
-    acertos_6 = []
-    acertos_5 = []
-    acertos_4 = []
+    # Lista para armazenar informações sobre os acertos
+    acertos = {
+        6: [],
+        5: [],
+        4: [],
+        3: []
+    }
 
     for linha in linhas_arquivo:
         quantidade_apostas += 1
         numeros = linha.strip().split()  # Separa por espaços por padrão
         numeros_do_jogo = set(map(int, numeros))
-        acertos = len(resultados.intersection(numeros_do_jogo))
+        qtd_acertos = len(resultados.intersection(numeros_do_jogo))
 
-        if acertos == 6:
-            acertos_6.append(numeros)
-
-        elif acertos == 5:
-            acertos_5.append(numeros)
-
-        elif acertos == 4:
-            acertos_4.append(numeros)
+        if qtd_acertos in [3, 4, 5, 6]:
+            acertos[qtd_acertos].append(numeros_do_jogo)
 
     # Exibir as informações consolidadas
-    print("🎉 Resultados da Mega Sena - 500 Apostas 🎉\n")
-    print("Oi pessoal,")
-    print("Atualizando sobre as apostas na Mega Sena: \n")
-    print(f"Data do Sorteio: {data_sorteio}\n")
+    print(f"⚠️ Atualizando sobre as apostas na Mega Sena:\n")
+    print(f"⚠️ Quantidade de apostas realizadas: {quantidade_apostas}\n")
+    print(f"📅 Data do Sorteio: {data_sorteio}\n")  # Emoji de calendário na data
     print(f"🔢 Números Sorteados: {resultados}\n")
-    print("✅ Acertos:")
+    print(f"✅ Resultados: ")
 
-    if acertos_6:
-        print("\nSENA - 6 números:")
-        for numeros in acertos_6:
-            print(f"{numeros}")
+    acertos_totais = sum([len(acertos[i]) for i in range(3, 7)])
     
-    if acertos_5:
-        print("\nQUINA - 5 números:")
-        for numeros in acertos_5:
-            print(f"{numeros}")
+    for acerto, jogos in acertos.items():
+        if jogos:
+            if acerto == 6:
+                print(f"\nSENA - 6 números: {acerto}")
+            elif acerto == 5:
+                print(f"\nQUINA - 5 números: {acerto}")
+            elif acerto == 4:
+                print(f"\nQUADRA - 4 números: {acerto}")
+            elif acerto == 3:
+                print(f"\nTerno - 3 números: {acerto}")
+            
+            for jogo in jogos:
+                print(f"Números: {jogo}")
+            
+            print(f"Quantidade de jogos acertados: {len(jogos)}")
+            acertos_totais += len(jogos)
 
-    if acertos_4:
-        print("\nQUADRA - 4 números:")
-        for numeros in acertos_4:
-            print(f"{numeros}")
-
-    print("\n🎉 Parabéns a todos! Comemoremos juntos! 🎉")
-    print(f"\n✅ Quantidade de jogos realizados: {quantidade_apostas}")
-
-else:
-    print("❌ Falha ao obter os números sorteados da Mega Sena")
+    if acertos_totais == 0:
+        print("\n😞 Que pena, não acertamos nada dessa vez!")
+    else:
+        print("\n🎉 Parabéns a todos! Comemoremos juntos! 🎉")
