@@ -4,7 +4,7 @@ def padronizar_numeros(numeros):
     return set(map(int, numeros))
 
 def validar_numeros(numeros):
-    return all(num.isdigit() for num in numeros)
+    return all(num.isnumeric() for num in numeros)  # Alteração na validação para aceitar apenas números inteiros
 
 def exibir_informacoes_acertos(acertos):
     quantidade_total_jogos = sum([len(jogos) for jogos in acertos.values()])
@@ -49,12 +49,15 @@ def processar_resultados_acertos(resultados, linhas_arquivo):
     for linha in linhas_arquivo:
         numeros = linha.strip().split()  # Separa por espaços por padrão
 
-        if validar_numeros(numeros):
-            numeros_do_jogo = set(map(int, numeros))
-            qtd_acertos = len(resultados.intersection(numeros_do_jogo))
+        if validar_numeros(numeros):  # Verifica se os números são válidos
+            try:
+                numeros_do_jogo = set(map(int, numeros))
+                qtd_acertos = len(resultados.intersection(numeros_do_jogo))
 
-            if qtd_acertos in range(4, 7):
-                acertos[qtd_acertos].append(numeros_do_jogo)
+                if qtd_acertos in range(3, 6):
+                    acertos[qtd_acertos].append(numeros_do_jogo)
+            except ValueError:
+                pass  # Ignora linhas que não puderem ser convertidas para números inteiros
 
     return acertos
 
@@ -71,13 +74,17 @@ if dados_mega_sena:
     premiacao = dados_mega_sena.get('premiacao')
 
     nome_arquivo = 'massa/jogos.txt'
-
     quantidade_apostas = 0
 
-    with open(nome_arquivo, 'r') as file:
-        linhas_arquivo = file.readlines()
+    try:
+        with open(nome_arquivo, 'r') as file:
+            linhas_arquivo = file.readlines()
+    except FileNotFoundError:
+        print(f"O arquivo {nome_arquivo} não foi encontrado.")
+        linhas_arquivo = []
 
     acertos = processar_resultados_acertos(resultados, linhas_arquivo)
+
 
     print(f"⚠️ Atualizando sobre as apostas na Mega Sena:\n")
     print(f"⚠️ Quantidade de apostas realizadas: {len(linhas_arquivo)}\n")
