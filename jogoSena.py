@@ -52,7 +52,7 @@ def processar_resultados_acertos(resultados, linhas_arquivo):
             numeros_do_jogo = set(map(int, numeros))
             qtd_acertos = len(resultados.intersection(numeros_do_jogo))
 
-            if qtd_acertos in range(1, 7):
+            if qtd_acertos in range(3, 7):
                 acertos[qtd_acertos].append(numeros_do_jogo)
 
     return acertos
@@ -69,7 +69,7 @@ if dados_mega_sena:
     data_sorteio = dados_mega_sena.get('data_concurso')
     premiacao = dados_mega_sena.get('premiacao')
 
-    nome_arquivo = 'massa/jogoteste.txt'
+    nome_arquivo = 'massa/jogos.txt'
 
     quantidade_apostas = 0
 
