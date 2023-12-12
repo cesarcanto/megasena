@@ -25,13 +25,14 @@ def exibir_informacoes_acertos(acertos):
                 print(f"\n1 número: {len(jogos)}")
 
             for jogo in jogos:
-                print(f"Números: {jogo}")
+                print(f"Jogo: {jogo}")
             
-            print(f"Quantidade de jogos acertados: {len(jogos)}")
-
+    
     if quantidade_total_jogos == 0:
         print("\n😞 Que pena, não acertamos nada dessa vez!")
+
     else:
+        print(f"\nQuantidade de jogos acertados no total: {quantidade_total_jogos}")
         print("\n🎉 Parabéns a todos! Comemoremos juntos! 🎉")
 
 
@@ -52,7 +53,7 @@ def processar_resultados_acertos(resultados, linhas_arquivo):
             numeros_do_jogo = set(map(int, numeros))
             qtd_acertos = len(resultados.intersection(numeros_do_jogo))
 
-            if qtd_acertos in range(3, 7):
+            if qtd_acertos in range(4, 7):
                 acertos[qtd_acertos].append(numeros_do_jogo)
 
     return acertos
