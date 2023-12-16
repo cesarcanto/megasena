@@ -89,7 +89,7 @@ if dados_mega_sena:
     print(f"⚠️ Atualizando sobre as apostas na Mega Sena:\n")
     print(f"⚠️ Quantidade de apostas realizadas: {len(linhas_arquivo)}\n")
     print(f"📅 Data do Sorteio: {data_sorteio}\n")  
-    print(f"🔢 Números Sorteados: {resultados}\n")
+    print(f"🔢 Números Sorteados: {sorted(resultados)}\n")
     print(f"✅ Resultados: ")
 
     exibir_informacoes_acertos(acertos)
