@@ -23,3 +23,5 @@ Os resultados surgem de maneira majestosa! A platéia virtual é surpreendida co
 Ao chegar ao desfecho desta Mega Aventura Reloaded, uma mensagem final é transmitida. Se a sorte estiver ao nosso lado, comemoramos os acertos juntos; se não, a mensagem consoladora nos guia para novas e emocionantes jornadas.
 
 Prepare-se para viver esta nova etapa da Mega Aventura! Que a sorte continue a iluminar seu caminho, aventureiro! 🌌🎲
+
+![Mega Aventura](images/dindin02.png)
